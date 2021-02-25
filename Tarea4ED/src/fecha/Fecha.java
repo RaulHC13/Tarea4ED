@@ -53,7 +53,7 @@ public class Fecha {
 
 		}
 
-		return validar(diasMes);
+		return validarFecha(diasMes);
 		/*
 		 * Comprueba que el número de dia es inferior al número maximo de dias de un mes
 		 */
@@ -62,8 +62,17 @@ public class Fecha {
 	/**
 	 * @param diasMes es el número máximo de dias en un mes
 	 * @return La fecha será valida o no válida
+	 * @deprecated Use {@link #validarFecha(int)} instead
 	 */
 	public boolean validar(int diasMes) {
+		return validarFecha(diasMes);
+	}
+
+	/**
+	 * @param diasMes es el número máximo de dias en un mes
+	 * @return La fecha será valida o no válida
+	 */
+	public boolean validarFecha(int diasMes) {
 		if (dia > diasMes)
 			return false;
 		else
