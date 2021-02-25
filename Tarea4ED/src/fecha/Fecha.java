@@ -13,10 +13,10 @@ public int dia;
 public int mes;
 public int año;
 
-public Fecha(int d, int m, int a) {
-this.dia = d;
-this.mes = m;
-this.año = a;
+public Fecha(int dia, int mes, int año) {
+this.dia = dia;
+this.mes = mes;
+this.año = año;
 }
 
 public boolean valida() {
