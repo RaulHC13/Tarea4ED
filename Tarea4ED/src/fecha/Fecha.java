@@ -5,21 +5,21 @@ package fecha;
 
 /**
  * @author Raul
- *
+ * @version 1.6
  */
 public class Fecha {
 
 	public int dia;
 	public int mes;
-	public int año;
+	public int anyo;
 
-	public Fecha(int dia, int mes, int año) {
+	public Fecha(int dia, int mes, int anyo) {
 		this.dia = dia;
 		this.mes = mes;
-		this.año = año;
+		this.anyo = anyo;
 	}
 
-	public boolean valida() {
+	public boolean valida() { /* Comprueba que el día y el mes introducidos son válidos*/
 
 		if (dia < 1 || dia > 31)
 			return false;
@@ -56,12 +56,10 @@ public class Fecha {
 		 */
 	}
 
-	/**
-	 * @return
-	 */
+	
 	public int bisiesto() {
 		int diasMes;
-		if ((año % 400 == 0) || ((año % 4 == 0) && (año % 100 != 0)))
+		if ((anyo % 400 == 0) || ((anyo % 4 == 0) && (anyo % 100 != 0)))
 			diasMes = 29;
 		else
 			diasMes = 28;
@@ -70,7 +68,7 @@ public class Fecha {
 
 	/**
 	 * @param diasMes es el número máximo de dias en un mes
-	 * @return La fecha será valida o no válida
+	 * @return La fecha será válida o no válida
 	 * @deprecated Use {@link #validarFecha(int)} instead
 	 */
 	public boolean validar(int diasMes) {
@@ -79,7 +77,7 @@ public class Fecha {
 
 	/**
 	 * @param diasMes es el número máximo de dias en un mes
-	 * @return La fecha será valida o no válida
+	 * @return La fecha será válida o no válida
 	 */
 	public boolean validarFecha(int diasMes) {
 		if (dia > diasMes)
